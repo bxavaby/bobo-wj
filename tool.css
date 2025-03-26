@@ -1,0 +1,677 @@
+/* ==========================
+   BOBO - THE WEB JESTER
+   ========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+
+  background: url("wape.jpg") no-repeat center center;
+  background-size: cover;
+  
+  position: relative;
+  min-height: 100vh; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* 
+  MAIN WRAPPER
+  - full viewport 
+  - centers everything  
+*/
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.container {
+  width: 90%;            
+  max-width: 600px;      
+  margin: 0 auto;
+}
+
+.form-section {
+  background: rgba(5, 5, 5, 0.65);
+  border-radius: 6px;
+  padding: 30px;
+  backdrop-filter: blur(2px);
+  border-top: 2px solid rgba(0, 255, 255, 0.8);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.8);
+  border-left: none;
+  border-right: none;
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.form-section:hover {
+  background: rgba(10, 10, 10, 0.8);
+}
+
+.title {
+  font-family: "Iceland", sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: cyan;
+  text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+
+/******************************************
+  CONTAINER => centered in parent
+******************************************/
+.mode-circle-container {
+  position: relative;
+  width: 200px; 
+  height: 200px;
+  margin: 40px auto;
+  display: block; 
+}
+
+/******************************************
+  QUARTER-CIRCLE BUTTONS
+******************************************/
+.mode-quarter {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 0, 255, 0.3);
+  color: cyan;
+  border: 2px solid rgba(0, 255, 255, 0.8);
+  border-radius: 0;
+  cursor: pointer;
+  overflow: hidden;
+  
+  margin: 5px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.mode-quarter:hover {
+  background-color: rgba(0, 255, 255, 0.3);
+  color: magenta;
+  box-shadow: 0px 0px 10px cyan, 0px 0px 20px magenta;
+  transform: scale(1.02);
+}
+
+
+.dark {
+  top: 0; left: 0;
+  border-radius: 100px 0 0 0;
+}
+
+.clean {
+  top: 0; right: 0;
+  border-radius: 0 100px 0 0;
+}
+
+.geo {
+  bottom: 0; left: 0;
+  border-radius: 0 0 0 100px;
+}
+
+.roast {
+  bottom: 0; right: 0;
+  border-radius: 0 0 100px 0;
+}
+
+/******************************************
+  ICONS & LABELS
+******************************************/
+/* <svg> icon => visible by default */
+.mode-quarter svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.mode-label {
+  position: absolute; /* so it can overlap icon in center */
+  opacity: 0;
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: centre;
+  transition: opacity 0.2s;
+}
+
+/******************************************
+  HOVER => show label, hide icon
+******************************************/
+.mode-quarter:hover svg {
+  opacity: 0;
+  transform: scale(0.6);
+}
+.mode-quarter:hover .mode-label {
+  opacity: 1;
+}
+
+/******************************************
+  SELECTED => keep icon, invert colors?
+******************************************/
+.mode-quarter.selected {
+  background-color: cyan;
+  color: magenta;
+  transform: scale(1.02);
+}
+
+.mode-quarter.selected svg {
+  opacity: 1;
+  transform: scale(1);
+}
+.mode-quarter.selected .mode-label {
+  opacity: 0;
+}
+
+/******************************************
+  OPTIONAL hover effect glitch or glow
+******************************************/
+
+/* === CYBERPUNK KEYWORD+GENERATE BUTTON === */
+.input__container--cyber {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-image-source: linear-gradient(155deg, cyan, transparent 50%, cyan);
+  border-image-slice: 1;
+  width: 90%; 
+  max-width: 20em; 
+  max-height: 10em;
+  padding: 1.2em;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.input__container--cyber:hover {
+  box-shadow: 0 0 3px blue, 0 0 3px yellow;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* === > === */
+.input-prompt {
+  font-size: 1.6em;
+  font-family: "Iceland", sans-serif;
+  color: cyan;
+  padding-right: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+.input__container--cyber:hover .input-prompt {
+  animation: glitch-text 0.8s infinite alternate ease-in-out;
+}
+
+/* === input field === */
+.input__search--cyber {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.6em;
+  color: cyan;
+  padding: 0.4em;
+  font-family: "Iceland", sans-serif;
+  text-transform: uppercase;
+  transition: width 0.3s ease-in-out;
+}
+
+/* placeholder text */
+.input__search--cyber::placeholder {
+  color: rgba(0, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+
+.input__search--cyber:-webkit-autofill,
+.input__search--cyber:-webkit-autofill:hover, 
+.input__search--cyber:-webkit-autofill:focus, 
+.input__search--cyber:-webkit-autofill:active {
+  background: transparent !important;  
+  color: cyan !important;             
+  -webkit-text-fill-color: cyan !important; 
+  font-family: "Iceland", sans-serif !important;
+  font-size: 1.6em !important;       
+  text-transform: uppercase !important; 
+  border: none !important;              
+  box-shadow: none !important;          
+  transition: background-color 5000s ease-in-out 0s; 
+}
+
+.input__button--cyber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%; 
+  background: cyan;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+.input__button--cyber:hover {
+  background: magenta;
+  transform: scale(1.02);
+}
+
+.input__button--cyber svg {
+  width: 26px;
+  height: 26px;
+  stroke: black;
+  transition: stroke 0.3s ease-in-out;
+}
+
+.input__button--cyber:hover svg {
+  stroke: cyan;
+}
+
+@keyframes glitch-text {
+  0% {
+    opacity: 1;
+    text-shadow: 1px 1px magenta, -1px -1px cyan;
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: -1px -1px magenta, 1px 1px cyan;
+  }
+}
+
+@keyframes glitch-intense {
+  0% {
+    opacity: 1;
+    text-shadow: 2px 2px magenta, -2px -2px cyan;
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: -2px -2px magenta, 2px 2px cyan;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px -2px magenta, -2px 2px cyan;
+  }
+}
+
+/* === JOKE DISPLAY === */
+.joke-display {
+  margin-top: 20px;
+  padding: 20px;
+  border: none;
+  border-image-slice: 1;
+  line-height: 1.6;
+  text-align: center;
+  min-height: 60px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* === LOADER === */
+.dot-spinner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  --uib-speed: 0.9s;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+@keyframes float {
+  0% {
+    transform: rotate(0deg) translate(100px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(100px) rotate(-360deg);
+  }
+}
+
+.dot-spinner__dot::before {
+  content: '';
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+  background-color: #fff;
+  filter: drop-shadow(0 0 10px rgb(95, 150, 202));
+  box-shadow: -6px -6px 11px #c1c1c1,
+             6px 6px 11px #ffffff;
+  transform: scale(0);
+  opacity: 0.5;
+  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+}
+
+.dot-spinner__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.dot-spinner__dot:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.dot-spinner__dot:nth-child(2)::before {
+  animation-delay: calc(var(--uib-speed) * -0.875);
+}
+
+.dot-spinner__dot:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.dot-spinner__dot:nth-child(3)::before {
+  animation-delay: calc(var(--uib-speed) * -0.75);
+}
+
+.dot-spinner__dot:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.dot-spinner__dot:nth-child(4)::before {
+  animation-delay: calc(var(--uib-speed) * -0.625);
+}
+
+.dot-spinner__dot:nth-child(5) {
+  transform: rotate(180deg);
+}
+
+.dot-spinner__dot:nth-child(5)::before {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+.dot-spinner__dot:nth-child(6) {
+  transform: rotate(225deg);
+}
+
+.dot-spinner__dot:nth-child(6)::before {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+
+.dot-spinner__dot:nth-child(7) {
+  transform: rotate(270deg);
+}
+
+.dot-spinner__dot:nth-child(7)::before {
+  animation-delay: calc(var(--uib-speed) * -0.25);
+}
+
+.dot-spinner__dot:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+.dot-spinner__dot:nth-child(8)::before {
+  animation-delay: calc(var(--uib-speed) * -0.125);
+}
+
+@keyframes pulse0112 {
+  0%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === JOKE TEXT === */
+.joke-text {
+  font-family: "Iceland", sans-serif;
+  font-size: 2.0rem;
+  color: #fff;
+  text-shadow: 0px 0px 6px rgba(255, 0, 255, 0.6);
+  opacity: 80;
+  transform: translateY(10px);
+  animation: none;
+}
+
+/* === FADE IN EFFECT FOR JOKE === */
+@keyframes jokeAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Back Button Below the Container ===== */
+.back-container {
+  margin-top: 20px; 
+}
+
+.text-decoration {
+  margin-left: 0.5rem; 
+}
+
+.btn-glitch {
+  display: inline-block;
+  font-family: "Iceland", sans-serif;
+  font-size: 1.2rem;
+  border: 2px solid rgb(0, 255, 255);
+  color: rgb(0, 255, 255);
+  padding: 10px 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  background: black;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.btn-glitch:hover {
+  animation-name: glitch;
+  animation-duration: 0.3s;
+  background-color: cyan;
+  color: black;
+  border: 2px solid cyan;
+}
+
+.btn-glitch:hover .text-decoration {
+  animation-name: blink;
+  animation-duration: 0.1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  25% {
+    background-color: #9d00ff;
+    transform: translateX(-20px);
+    letter-spacing: 3px;
+  }
+  35% {
+    background-color: cyan;
+    transform: translate(20px);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  60% {
+    background-color: #9d00ff;
+    transform: translate(-3px);
+    filter: blur(2px);
+  }
+  100% {
+    background-color: cyan;
+  }
+}
+
+/* ==========================
+    Elegant Swift Cursor Trail
+   ========================== */
+.cursor-trail {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(90, 90, 90, 0.6); 
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: fadeTrail 0.3s ease-out forwards;
+    z-index: 9999;
+    box-shadow: 
+        0px 0px 10px rgba(80, 80, 80, 0.4), 
+        0px 0px 20px rgba(80, 80, 80, 0.3), 
+        0px 0px 30px rgba(80, 80, 80, 0.2); 
+    }
+
+@keyframes fadeTrail {
+    0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+    100% { opacity: 0; transform: scale(1.8); filter: blur(5px); } 
+}
+
+/* ==========================
+    Responsive Design
+   ========================== */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 15px; 
+    }
+
+    .form-section {
+        padding: 20px; 
+    }
+
+    .title {
+        font-size: 2rem; 
+    }
+
+    .mode-circle-container {
+        width: 160px; 
+        height: 160px;
+    }
+
+    .mode-quarter {
+        width: 80px;
+        height: 80px;
+    }
+
+    .input__container--cyber {
+        max-width: 80%;
+        padding: 10px;
+    }
+
+    .input__search--cyber {
+        font-size: 1.2rem; 
+    }
+
+    .input__button--cyber {
+        width: 80%; 
+        padding: 10px;
+    }
+
+    .joke-text {
+        font-size: 1.4rem; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 85%;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .mode-circle-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .mode-quarter {
+        width: 90px;
+        height: 90px;
+    }
+
+    .input__search--cyber {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 600px; 
+    }
+
+    .mode-circle-container {
+        width: 220px;
+        height: 220px;
+    }
+
+    .mode-quarter {
+        width: 110px;
+        height: 110px;
+    }
+
+    .title {
+        font-size: 2.8rem;
+    }
+}

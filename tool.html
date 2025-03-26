@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOBO, Take a Byte</title>
+
+  <link rel="stylesheet" href="tool.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Iceland&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Iceberg&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <div class="cursor"></div>
+  <script>
+     document.addEventListener("mousemove", function (e) {
+         let trail = document.createElement("div");
+         trail.classList.add("cursor-trail");
+         document.body.appendChild(trail);
+       
+         trail.style.left = `${e.clientX}px`;
+         trail.style.top = `${e.clientY}px`;
+       
+         setTimeout(() => {
+             trail.style.opacity = "0";
+             setTimeout(() => trail.remove(), 300);
+         }, 50);
+     });
+  </script>    
+  <main class="main-wrapper">
+    <div class="container">
+      <div class="form-section">
+        <h1 class="title">Web Jester</h1>
+        
+        <form method="post">
+          <div class="mode-circle-container">
+            <div class="mode-quarter dark" data-mode="Dark" type="button">
+              <span class="mode-label"><strong>Dark</strong></span>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-skull"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 4c4.418 0 8 3.358 8 7.5c0 1.901 -.755 3.637 -2 4.96l0 2.54a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-2.54c-1.245 -1.322 -2 -3.058 -2 -4.96c0 -4.142 3.582 -7.5 8 -7.5z" /><path d="M10 17v3" /><path d="M14 17v3" /><path d="M9 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M15 11m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+            </div>
+          
+            <div class="mode-quarter clean" data-mode="Clean" type="button">
+              <span class="mode-label"><strong>Clean</strong></span>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19.5 13.572l-7.5 7.428l-2.896 -2.868m-6.117 -8.104a5 5 0 0 1 9.013 -3.022a5 5 0 1 1 7.5 6.572" /><path d="M3 13h2l2 3l2 -6l1 3h3" /></svg>
+            </div>
+          
+            <div class="mode-quarter geo" data-mode="Geokes" type="button">
+              <span class="mode-label"><strong>Geokes</strong></span>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-compass"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 16l2 -6l6 -2l-2 6l-6 2" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 3l0 2" /><path d="M12 19l0 2" /><path d="M3 12l2 0" /><path d="M19 12l2 0" /></svg>
+            </div> 
+                     
+            <div class="mode-quarter roast" data-mode="Roast" type="button">
+              <span class="mode-label"><strong>Roast</strong></span>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-flame"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 10.941c2.333 -3.308 .167 -7.823 -1 -8.941c0 3.395 -2.235 5.299 -3.667 6.706c-1.43 1.408 -2.333 3.621 -2.333 5.588c0 3.704 3.134 6.706 7 6.706s7 -3.002 7 -6.706c0 -1.712 -1.232 -4.403 -2.333 -5.588c-2.084 3.353 -3.257 3.353 -4.667 2.235" /></svg>
+            </div>
+          </div>
+          
+          
+          <div class="input__container--cyber">
+              <div class="input-wrapper">
+                  <span class="input-prompt">$</span> 
+                  <input type="text" name="keyword" class="input__search--cyber" placeholder="keyword _" />
+              </div>
+              <button class="input__button--cyber">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M5 16m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h11a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-11a1.5 1.5 0 0 1 -1.5 -1.5z" />
+                      <path d="M12 16q -2.5 -8 -6 -8q -2.5 0 -3 2c2.953 .31 3.308 3.33 4 6" />
+                      <path d="M12 16q 2.5 -8 6 -8q 2.5 0 3 2c-2.953 .31 -3.308 3.33 -4 6" />
+                      <path d="M9 9.5q 2 -3.5 3 -3.5t 3 3.5" />
+                  </svg>
+              </button>
+          </div>
+          
+          <script>
+            document.querySelector(".input__button--cyber").addEventListener("click", () => {
+                const keywordInput = document.querySelector(".input__search--cyber");
+                const keyword = keywordInput.value.trim();
+            
+                if (keyword) {
+                    console.log(`Generating joke with keyword: ${keyword}`);
+
+                } else {
+                    console.log("Generating random joke...");
+                }
+            });
+          </script>
+     
+        </form>
+        
+        <div class="joke-display">
+            <div class="dot-spinner" id="jokeLoader" style="display: none;">
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+            </div>
+        
+            <p class="joke-text" id="jokeText" style="display: none;"></p>
+        </div>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              function loadJoke(jokeText) {
+                  const spinner = document.querySelector(".spinner-container");
+                  const jokeElement = document.querySelector(".joke-text");
+          
+                  spinner.style.display = "flex";
+                  jokeElement.style.opacity = "0";
+          
+                  setTimeout(() => {
+                      spinner.style.display = "none";
+          
+                      jokeElement.textContent = jokeText;
+                      jokeElement.style.animation = "jokeAppear 0.5s ease-in-out forwards";
+                  }, 2000);
+              }          
+          });
+        </script>
+        
+      </div>
+    </div>
+    
+    <div class="back-container">
+        <a href="/" class="btn-glitch">
+            <span class="text">> RETREAT</span>
+            <span class="text-decoration">_</span>
+        </a>
+    </div>
+    
+  </main>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      let selectedCategory = null;
+      const container = document.querySelector('.mode-circle-container');
+      const jokeButton = document.querySelector(".input__button--cyber");
+      const jokeElement = document.getElementById("jokeText");
+      const loader = document.getElementById("jokeLoader");
+  
+      container.querySelectorAll('.mode-quarter').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const mode = btn.dataset.mode;
+  
+              if (selectedCategory === mode) {
+                  selectedCategory = null;
+                  btn.classList.remove('selected');
+              } else {
+                  selectedCategory = mode;
+                  container.querySelectorAll('.mode-quarter').forEach(b => b.classList.remove('selected'));
+                  btn.classList.add('selected');
+              }
+          });
+      });
+  
+      jokeButton.addEventListener("click", (e) => {
+          e.preventDefault();
+  
+          jokeButton.disabled = true;
+          loader.style.display = "flex";
+          jokeElement.style.display = "none";
+          jokeElement.textContent = "";
+  
+          setTimeout(() => {
+              loader.style.display = "none";
+              jokeElement.innerHTML = "Let's pretend I just said something hilarious *winks*..";
+              jokeElement.style.display = "block";
+              jokeElement.style.transition = "opacity 0.5s ease-in-out";
+              setTimeout(() => { jokeElement.style.opacity = "1"; }, 100);
+              jokeButton.disabled = false;
+          }, 2000);
+      });
+  });
+  </script>
+  
+</body>
+</html>
