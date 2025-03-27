@@ -20,10 +20,10 @@ It runs frontend-only, for now (check out [⧾ Technical Notes](#⧾-technical-n
 ## ⧾ Features
 
 - Pure **frontend** — no dependencies, no build system
+- Ready for backend plug-in via Flask + Ollama (optional)
 - Humor **mode selector** — Clean, Dark, Roast, Geokes
 - Automatic **fallback**
 - Retro-futuristic UI with **glitch effects** and a cursor trail
-- Ready for backend plug-in via Flask + Ollama (optional)
 
 ---
 
