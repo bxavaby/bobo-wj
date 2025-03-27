@@ -6,7 +6,7 @@
 ![Mobile Friendly](https://img.shields.io/badge/Mobile-Friendly-green?style=flat-square)
 [![MIT License](https://img.shields.io/badge/License-MIT-purple?style=flat-square)](LICENSE)
 
-**Bobo** is a neon-lit joke generator built entirely with the front-end triad and python.  
+**Bobo** is a neon-lit joke generator built entirely with the frontend triad and python.  
 It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes)), gently falling back to a humorous note when the backend is offline.
 
 ## ⧾ Demo
