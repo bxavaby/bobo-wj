@@ -21,8 +21,7 @@ It runs frontend-only, for now (check out [⧾ Technical Notes](#⧾-technical-n
 
 - Pure **frontend** — no dependencies, no build system
 - Humor **mode selector** — Clean, Dark, Roast, Geokes (Geography Jokes)
-- 🪩 Automatic **fallback**:  
-  _"Let's pretend I just said something hilarious *winks.*"_
+- Automatic **fallback**
 - Retro-futuristic UI with **glitch effects** and a cursor trail
 - Ready for backend plug-in via Flask + Ollama (optional)
 
