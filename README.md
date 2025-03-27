@@ -13,8 +13,6 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 
 ⤷ [**Launch Bobo on GitHub Pages**](https://bxavaby.github.io/bobo-wj/)
 
----
-
 ## ⧾ Features
 
 - Pure **frontend** — no dependencies, no build system
@@ -22,8 +20,6 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 - Humor **mode selector** — Clean, Dark, Roast, Geokes
 - Automatic **fallback**
 - Retro-futuristic UI with **glitch effects** and a cursor trail
-
----
 
 ## ⧾ Technical Notes
 
@@ -35,8 +31,6 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
     - Deploy a Flask app that communicates with the frontend
     - Handle the joke generation logic via your preferred LLM (HuggingFace, Ollama, i.a.)
 
----
-
 ## ⧾ Files
 
 - `index.html` – home page, info, links
@@ -45,16 +39,12 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 - `tool.css` – WJ styling
 - `wape.jpg` – background image
 
----
-
 ## ⧾ Future Ideas
 
 - AI model switcher (local/cloud)
 - Save/share jokes
 - Voice generation (text-to-speech)
 - Bobo, the Pocket Jester
-
----
 
 ## ⧾ License
 
