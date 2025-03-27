@@ -50,6 +50,4 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 
 Licensed under the [MIT License](LICENSE).
 
----
-
 > ⦿ *Built with love by [@bxavaby](https://github.com/bxavaby) and friends.*
