@@ -55,6 +55,17 @@ body::before {
 }
 
 /* ==========================
+    Header Stack
+   ========================== */
+.header-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* ==========================
     Navigation
    ========================== */
 .menu {
@@ -354,33 +365,43 @@ body::before {
     Responsive Design
    ========================== */
 @media (max-width: 768px) {
-    .container {
-        max-width: 95%; 
-        padding: 15px; 
-    }
+  .header-stack {
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+  }
 
-    .menu {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .logo {
+    font-size: clamp(2rem, 6vw, 3rem);
+    max-width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
 
-    .menu-btn, .unleash-btn {
-        font-size: 1.2rem;
-        padding: 12px 20px;
-    }
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
 
-    .content-section {
-        width: 100%;
-        padding: 20px; 
-    }
+  .menu-btn, .unleash-btn {
+    width: 90%;
+    font-size: 1.1rem;
+  }
 
-    .content-section h1 {
-        font-size: 2rem;
-    }
+  .content-section {
+    width: 95%;
+    padding: 20px;
+  }
 
-    .content-section p {
-        font-size: 1.2rem;
-    }
+  .content-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .content-section p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 1024px) {
