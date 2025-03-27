@@ -1,7 +1,7 @@
 # BOBO, The Web Jester
 
 ![LLM-powered](https://img.shields.io/badge/LLM-powered-orange?style=flat-square)
-![UI: Cyberpunkish](https://img.shields.io/badge/UI-Cyberpunk%20Retro-ff00ff?style=flat-square)
+![UI: Cyberpunkish](https://img.shields.io/badge/UI-Cyberpunkish%20-ff00ff?style=flat-square)
 ![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-blue?style=flat-square)
 ![Mobile Friendly](https://img.shields.io/badge/Mobile-Friendly-green?style=flat-square)
 [![MIT License](https://img.shields.io/badge/License-MIT-purple?style=flat-square)](LICENSE)
