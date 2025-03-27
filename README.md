@@ -41,10 +41,11 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 
 ## ⧾ Future Ideas
 
-- AI model switcher (local/cloud)
-- Save/share jokes
-- Voice generation (text-to-speech)
 - Bobo, the Pocket Jester
+- LLM switcher (local/cloud)
+- Save/share jokes
+- TTS
+
 
 ## ⧾ License
 
