@@ -16,7 +16,7 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 ## ⧾ Features
 
 - Pure **frontend** — no dependencies, no build system
-- Ready for backend plug-in via **Flask + Ollama** (optional)
+- Ready for backend plug-in via **Flask + Ollama** (or whatever is suitable)
 - Humor **mode selector** — *Clean, Dark, Roast, Geokes*
 - Automatic **fallback**
 - Retro-futuristic UI with **glitch effects**
@@ -51,4 +51,4 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 
 Licensed under the [MIT License](LICENSE).
 
-> ⦿ *Built with love by [@bxavaby](https://github.com/bxavaby), [@BobRossMug](https://github.com/BobRossMug), [@ClaudeReppert](https://github.com/ClaudeReppert) and [@Fahren1t](https://github.com/Fahren1t).*
+> ⦿ *Built with brio by [@bxavaby](https://github.com/bxavaby), [@BobRossMug](https://github.com/BobRossMug), [@ClaudeReppert](https://github.com/ClaudeReppert) and [@Fahren1t](https://github.com/Fahren1t).*
