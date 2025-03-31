@@ -51,4 +51,4 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
 
 Licensed under the [MIT License](LICENSE).
 
-> ⦿ *Built with brio by [@bxavaby](https://github.com/bxavaby), [@BobRossMug](https://github.com/BobRossMug), [@ClaudeReppert](https://github.com/ClaudeReppert) and [@Fahren1t](https://github.com/Fahren1t).*
+> ⦿ 'Built with brio by [@bxavaby](https://github.com/bxavaby), [@BobRossMug](https://github.com/BobRossMug), [@ClaudeReppert](https://github.com/ClaudeReppert) and [@Fahren1t](https://github.com/Fahren1t).'
