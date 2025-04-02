@@ -29,7 +29,7 @@ It runs frontend-only, for now (check out [Technical Notes](#+-technical-notes))
   - Modifying the `fetch` logic in `tool.html`
   - Running a lightweight Python script to:
     - Deploy a Flask app that communicates with the frontend
-    - Handle the joke generation logic via your preferred LLM (via HuggingFace, Ollama, i.a.)
+    - Handle the joke generation logic with your preferred LLM (via HuggingFace, Ollama, i.a.)
 
 ## ⧾ Files
 
